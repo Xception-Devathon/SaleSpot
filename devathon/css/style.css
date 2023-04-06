@@ -41,15 +41,10 @@ main {
   padding: 20px clamp(20px, 5vw, 100px);
 }
 
-#brand,
-#brand-mobile {
+#brand {
   font-size: 2rem;
   color: var(--secondary-color);
   font-family: "Leckerli One", cursive;
-}
-
-#brand-mobile {
-  display: none;
 }
 
 .nav {

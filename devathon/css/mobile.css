@@ -1,10 +1,6 @@
 @media screen and (max-width: 768px) {
-  #brand,
   .nav {
     display: none;
-  }
-  #brand-mobile {
-    display: block;
   }
   #icon {
     height: 1.5rem;
