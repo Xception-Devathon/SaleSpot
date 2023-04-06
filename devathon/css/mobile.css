@@ -49,4 +49,8 @@
   .open#bars::after {
     transform: translateY(0) translateX(1rem) rotate(-45deg);
   }
+
+  .categories{
+    grid-template-columns: 1fr;
+  }
 }

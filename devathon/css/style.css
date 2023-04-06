@@ -25,7 +25,6 @@ body {
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 main {
@@ -90,4 +89,12 @@ main .nav {
   text-align: center;
   line-height: 4rem;
 font-size: 2rem;
+}
+
+.heading {
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin: 2rem 0;
 }
