@@ -25,7 +25,7 @@ export default function Card(imgSrc, prodTitle, price, rating) {
     ratingDiv.className = 'rating';
   
     const starImg = document.createElement('img');
-    starImg.src = '/devathon/assets/star.svg';
+    starImg.src = './assets/star.svg';
     starImg.alt = '';
   
     const ratingValue = document.createElement('span');
