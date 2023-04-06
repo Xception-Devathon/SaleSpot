@@ -1,171 +1,42 @@
-import Card from "./card.js";
+import renderProducts from "./utils/renderProduct.js";
 
-fetch("https://dummyjson.com/products/category/smartphones")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("smartphones");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
+const items = [
+  {
+    url: "https://dummyjson.com/products/category/smartphones",
+    id: "smartphones",
+  },
+  {
+    url: "https://dummyjson.com/products/category/laptops",
+    id: "laptops",
+  },
+  {
+    url: "https://dummyjson.com/products/category/fragrances",
+    id: "fragrances",
+  },
+  {
+    url: "https://dummyjson.com/products/category/skincare",
+    id: "skincare",
+  },
+  {
+    url: "https://dummyjson.com/products/category/groceries",
+    id: "groceries",
+  },
+  {
+    url: "https://dummyjson.com/products/category/home-decoration",
+    id: "decor",
+  },
+  {
+    url: "https://dummyjson.com/products/category/furniture",
+    id: "furniture"
+  },{
+    url: "https://dummyjson.com/products/category/automotive",
+    id: "automotive"
+  },{
+    url: "https://dummyjson.com/products/category/motorcycle",
+    id: "motorcycle"
+  },{
+    url: "https://dummyjson.com/products/category/lighting",
+    id: "lighting"
+  }];
 
-fetch("https://dummyjson.com/products/category/laptops")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("laptops");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/fragrances")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("fragrances");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/skincare")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("skincare");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-    .catch((error) => console.error(error));
-  
-    fetch("https://dummyjson.com/products/category/groceries")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("groceries");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-    .catch((error) => console.error(error));
-  
-    fetch("https://dummyjson.com/products/category/home-decoration")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("decor");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-    .catch((error) => console.error(error));
-  
-    fetch("https://dummyjson.com/products/category/furniture")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("furniture");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-    .catch((error) => console.error(error));
-  
-    fetch("https://dummyjson.com/products/category/automotive")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("automotive");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-    .catch((error) => console.error(error));
-  
-    fetch("https://dummyjson.com/products/category/motorcycle")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("motorcycle");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-    .catch((error) => console.error(error));
-  
-    fetch("https://dummyjson.com/products/category/lighting")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("lighting");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
+items.forEach(renderProducts);

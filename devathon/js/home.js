@@ -1,4 +1,4 @@
-import Card from "./card.js";
+import Card from "./utils/card.js";
 
 fetch("https://dummyjson.com/products?limit=0")
   .then((response) => response.json())

@@ -1,69 +1,21 @@
-import Card from "./card.js";
+import renderProducts from "./utils/renderProduct.js";
 
-fetch("https://dummyjson.com/products/category/mens-shirts")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("shirts");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
+const items = [
+  {
+    url: "https://dummyjson.com/products/category/mens-shirts",
+    id: "shirts",
+  },
+  {
+    url: "https://dummyjson.com/products/category/mens-shoes",
+    id: "shoes",
+  },
+  {
+    url: "https://dummyjson.com/products/category/mens-watches",
+    id: "watches",
+  },
+  {
+    url: "https://dummyjson.com/products/category/sunglasses",
+    id: "sunglasses",
+  },];
 
-fetch("https://dummyjson.com/products/category/mens-shoes")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("shoes");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/mens-watches")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("watches");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/sunglasses")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("sunglasses");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
+items.forEach(renderProducts);

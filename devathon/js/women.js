@@ -1,102 +1,29 @@
-import Card from "./card.js";
+import renderProducts from "./utils/renderProduct.js";
 
-fetch("https://dummyjson.com/products/category/tops")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("tops");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
+const items = [
+  {
+    url: "https://dummyjson.com/products/category/tops",
+    id: "tops",
+  },
+  {
+    url: "https://dummyjson.com/products/category/womens-dresses",
+    id: "dresses",
+  },
+  {
+    url: "https://dummyjson.com/products/category/womens-shoes",
+    id: "shoes",
+  },
+  {
+    url: "https://dummyjson.com/products/category/womens-watches",
+    id: "watches",
+  },
+  {
+    url: "https://dummyjson.com/products/category/womens-bags",
+    id: "bags",
+  },
+  {
+    url: "https://dummyjson.com/products/category/womens-jewellery",
+    id: "jewellery",
+  },];
 
-fetch("https://dummyjson.com/products/category/womens-dresses")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("dresses");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/womens-shoes")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("shoes");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/womens-watches")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("watches");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-fetch("https://dummyjson.com/products/category/womens-bags")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("bags");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
-
-fetch("https://dummyjson.com/products/category/womens-jewellery")
-  .then((response) => response.json())
-  .then((data) => {
-    const picksElement = document.getElementById("jewellery");
-    picksElement.style.gridTemplateColumns=`repeat(${data.products.length}, clamp(200px, 100%, 300px))`;
-    data.products.forEach((productData) => {
-      const product = Card(
-        productData.thumbnail,
-        productData.title,
-        productData.price,
-        productData.rating
-      );
-      picksElement.appendChild(product);
-    });
-  })
-  .catch((error) => console.error(error));
+items.forEach(renderProducts);
