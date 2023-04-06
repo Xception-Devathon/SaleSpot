@@ -19,13 +19,13 @@ export default function Card(imgSrc, prodTitle, price, rating) {
   
     const priceDiv = document.createElement('div');
     priceDiv.className = 'price';
-    priceDiv.textContent = price;
+    priceDiv.textContent = `$${price}`;
   
     const ratingDiv = document.createElement('div');
     ratingDiv.className = 'rating';
   
     const starImg = document.createElement('img');
-    starImg.src = './assets/star.svg';
+    starImg.src = '/devathon/assets/star.svg';
     starImg.alt = '';
   
     const ratingValue = document.createElement('span');
